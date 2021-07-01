@@ -1,51 +1,108 @@
+//* this package is executable
 package main
 
+import "fmt"
+
+//* executable func
 func main() {
-	//var a = 5 - declare and assign, := declare and assign
-	// var b int8  // -127..128
-	// var c uint8 //0 255
-	// var e int   // 32 bits on 32-bit machines, and 64 for amd64
+	// simple call
+	fmt.Println("Hello, World!")
+	//auto var
+	var a int //integer
+	// the initial is zero
+	fmt.Println(a)
+	//assign
+	a = a + 5
+	a -= 2
+	var b = 4
+	fmt.Println(a, b)
+
+	// sizes of int
+
+	// var a : int8  // -127 127
+	// var b : uint8 // 0 255
+	// var c : int16 //
+	// var d : uint16
+	// var e int // 32 bits or 64 bits depending on machine
+
+	// floats
+
 	// var f1 float32
 	// var f2 float64
 
-	// Be careful of types, uint8 + uint8 may overflow and it will cyrcle the result
-	// e.g. 255 + 1 = 0
+	//short typing + types mismatch
+	c := 5
+	d := 3.6 // 32 bit or 64 float depenging on machine
 
-	// booleans
-	// var b bool = true
+	fmt.Println(c + int(d))
 
-	// helloWorld := "Hello World"
-	// fmt.Println(helloWorld)
+	// overload
 
-	// while
-	// i := 0
-	// for i < 10 {
-	// 	fmt.Println("Hello world:", i)
-	// 	i++
-	// }
+	var a1 uint8 = 255
+	var a2 uint8 = 4
+	fmt.Println(a1, "+", a2, "=", a1+a2, "uint!")
 
-	// for
-	// for i := 0; i < 10; i++ {
-	// 	fmt.Println("Hello World:", i)
-	// }
+	// strage decimal
 
-	// test := false
-	// if test {
-	// 	fmt.Println("Hello World")
-	// } else {
-	// 	fmt.Println("Goodbye")
-	// }
+	b1 := 2.0
+	b2 := 3.0
 
-	// if !test {
-	// 	fmt.Println("Goodbye")
-	// }
+	fmt.Println(b1 / b2)
 
-	// x := 5
-	// if x > 5 {
-	// 	fmt.Println("Hello World")
-	// } else if x < 5 {
-	// 	fmt.Println("Goodbye")
-	// } else {
-	// 	fmt.Println("It's five!")
-	// }
+	//booleans
+
+	truf := true
+
+	var bln bool = false
+
+	fmt.Println(truf, bln)
+
+	var a3 string = "hello"
+	fmt.Println(a3)
+
+	//loops
+	for {
+		fmt.Println("Infinite Loop")
+		break // exit
+	}
+
+	//loop with statement
+	i := 0
+
+	for i < 4 {
+		fmt.Print(i)
+		i++
+	}
+	fmt.Print(" ")
+
+	// all in one
+	for i := 0; i < 3; i++ {
+		fmt.Print(i)
+	}
+
+	// conditionals
+	i = 0
+	if i > 1 {
+		fmt.Print("Wrong")
+	} else if i > 10 {
+		fmt.Print("Yep")
+	} else {
+		fmt.Print("Nope")
+	}
+
+	bln = false
+
+	if !bln {
+		fmt.Println("NewLine")
+	}
+
+	switch bln {
+	case true:
+		fmt.Println("true")
+		break
+	case false:
+		fmt.Println("false")
+	default:
+		fmt.Println("default")
+	}
 }
